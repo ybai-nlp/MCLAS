@@ -1,6 +1,6 @@
 # Multi-Task Framework for Cross-Lingual Abstractive Summarization (MCLAS)
 
-The code for ACL2021 paper Cross-Lingual Abstractive Summarization with Limited Parallel Resources.
+The code for ACL2021 paper Cross-Lingual Abstractive Summarization with Limited Parallel Resources ([Paper](https://arxiv.org/abs/2105.13648)).
 
 Some codes are borrowed from PreSumm (https://github.com/nlpyang/PreSumm).
 
