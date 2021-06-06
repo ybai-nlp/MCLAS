@@ -7,5 +7,4 @@ tmp/
 *.sh
 temp/
 logs/
-models/
 results/

@@ -4,14 +4,13 @@ The code for ACL2021 paper Cross-Lingual Abstractive Summarization with Limited 
 
 Some codes are borrowed from PreSumm (https://github.com/nlpyang/PreSumm).
 
-[toc]
 
 
 ## Environments
 
 Python version: This code is in Python3.7
 
-Package Requirements: torch==1.1.0 transformers tensorboardX multiprocess pyrouge
+Package Requirements: torch==1.1.0, transformers, tensorboardX, multiprocess, pyrouge
 
 Needs few changes to be compatible with torch 1.4.0~1.8.0, mainly tensor type (bool) bugs.
 
@@ -31,13 +30,13 @@ You can build your own dataset or download our preprocessed dataset.
 ### Build Your Own Dataset.
 Remain to be origanized. Some of the code needs to be debug, plz use it carefully.
 #### Build tokenized files.
-Plz refer to function tokenize_xgiga() or tokenize_new() in ./src/data_builder.py to write your code to preprocess your own training, validation, and test dataset. And then run the following commands:
+Plz refer to function `tokenize_xgiga()` or `tokenize_new()` in `./src/data_builder.py` to write your code to preprocess your own training, validation, and test dataset. And then run the following commands:
 ```bash
 python preprocess.py -mode tokenize_xgiga -raw_path PATH_TO_YOUR_RAW_DATA -save_path PATH_TO_YOUR_SAVE_PATH
 ```
 * Stanford CoreNLP needs to be installed.
 
-Plz substitute "tokenize_xgiga" to your own process function.
+Plz substitute `tokenize_xgiga` to your own process function.
 
 In our case, we made the raw data directory as follows:
 
@@ -101,7 +100,7 @@ python preprocess.py -mode format_to_bert_new -raw_path JSON_PATH -save_path BER
 ### Full dataset scenario training
 To train our model in full dataset scenario, plz use following command. Change the data path to switch the trained model between NCLS and MCLAS. 
 
-When using NCLS type datasets, arguement '--multi_task' enables training with NCLS+MS model.
+When using NCLS type datasets, arguement `--multi_task` enables training with NCLS+MS model.
 ```bash
  python train.py  \
  -task abs -mode train \
@@ -126,7 +125,7 @@ When using NCLS type datasets, arguement '--multi_task' enables training with NC
 #### Monolingual summarization pretraining
 First we should train a monolingual summarization model using following commands:
 
-You can change the trained model type using the same methods mentioned above (change dataset or '--multi_task' arguement)
+You can change the trained model type using the same methods mentioned above (change dataset or `--multi_task`)
 
 ```bash
 python train.py  \
@@ -156,11 +155,11 @@ After obtaining the monolingual model, we use it to initialize the low-resource 
 
 Note: 
 
-'-train_from' should be omitted if you want to train a model without monolingual initialization.
+`-train_from` should be omitted if you want to train a model without monolingual initialization.
 
-'--new_optim' is necessary since we need to restart warm-up and learning rate decay during this process.
+`--new_optim` is necessary since we need to restart warm-up and learning rate decay during this process.
 
-'--few_shot' controls whether to use limited resource to train the model. Meanwhile, '-few_shot_rate' controls the number of samples that you want to use. More specifically, the number of dataset's chunks.
+`--few_shot` controls whether to use limited resource to train the model. Meanwhile, '-few_shot_rate' controls the number of samples that you want to use. More specifically, the number of dataset's chunks.
 
 For each scenario in our paper (using our preprocessed dataset), the few_shot_rate is set as 1, 5, and 10. 
 
@@ -205,17 +204,17 @@ python train.py -task abs \
 --predict_2language
 ```
 
-If you are not evaluating a MCLAS model, plz remove '--predict_2language'.
+If you are not evaluating a MCLAS model, plz remove `--predict_2language`.
 
-If you are predicting Chinese summaries, plz add '--predict_chinese' to the command.
+If you are predicting Chinese summaries, plz add `--predict_chinese` to the command.
 
-If you are evaluating a NCLS+MS model, plz add '--multi_task' to the command.
+If you are evaluating a NCLS+MS model, plz add `--multi_task` to the command.
 
 Using following two commands  will slightly improve all models' performance. 
 
-'--language_limit' means that the predictor will only predict words appearing in summaries of training data.
+`--language_limit` means that the predictor will only predict words appearing in summaries of training data.
 
-'--tgt_mask' is a list, recording all the words appearing in summaries of the training set. We provided chiniese and english dict in ./src directory .
+`--tgt_mask` is a list, recording all the words appearing in summaries of the training set. We provided chiniese and english dict in ./src directory .
 
 
 
@@ -226,14 +225,14 @@ Using following two commands  will slightly improve all models' performance.
 ## Other Notable Commands
 Plz ignore these arguments, these command were added and abandoned when trying new ideas¸
 I will delete these related code in the future.
-* --sep_decoder
-* --few_sep_decoder
-* --tgt_seg 
-* --few_sep_decoder
-* -bart    
+* `--sep_decoder`
+* `--few_sep_decoder`
+* `--tgt_seg`
+* `--few_sep_decoder`
+* `-bart`    
 
 
-Besides, '--batch_verification' is used to debug, printing all the attributes in a training batch.
+Besides, `--batch_verification` is used to debug, printing all the attributes in a training batch.
 
 
 
