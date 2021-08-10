@@ -27,6 +27,8 @@ You can build your own dataset or download our preprocessed dataset.
 4. En2Zh dataset: [Google Drive Link](https://drive.google.com/file/d/1Gs_ieU_pMsE9BtLz0lO8qtmdnHHDCnU8/view?usp=sharing).
 4. En2EnZh (concatenated) dataset: [Google Drive Link](https://drive.google.com/file/d/1Pc4JyXbzIOrhFIb5tpU9YyseNM-hb9cp/view?usp=sharing).
 
+PS: Our implementation filter some invalid samples (if the target of a sample is too short). Hence the number of the training samples may be smaller than what is reported in the paper. 
+
 ### Build Your Own Dataset.
 Remain to be origanized. Some of the code needs to be debug, plz use it carefully.
 #### Build tokenized files.
