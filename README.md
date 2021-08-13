@@ -22,9 +22,7 @@ You can build your own dataset or download our preprocessed dataset.
 ### Download Preprocessed dataset.
 1. En2De dataset: [Google Drive Link](https://drive.google.com/file/d/17WTmAn5u1rQnd03r0zCUdXxYZfjf5uoa/view?usp=sharing).
 2. En2EnDe (concatenated) dataset: [Google Drive Link](https://drive.google.com/file/d/13CK1RsbyafrS4tINRbVn5bZUA9CA5u7F/view?usp=sharing).
-3. Zh2En dataset: [Google Drive Link](https://drive.google.com/file/d/1lzB_f4fShMLbIS13UNHA4H6emZYMF_qT/view?usp=sharing).
-4. Zh2ZhEn (concatenated) dataset: [Google Drive Link](https://drive.google.com/file/d/15SD9GUkluDOX0ZstP4OboLivGU03khHg/view?usp=sharing).
-4. En2Zh dataset: [Google Drive Link](https://drive.google.com/file/d/1Gs_ieU_pMsE9BtLz0lO8qtmdnHHDCnU8/view?usp=sharing).
+3. En2Zh dataset: [Google Drive Link](https://drive.google.com/file/d/1Gs_ieU_pMsE9BtLz0lO8qtmdnHHDCnU8/view?usp=sharing).
 4. En2EnZh (concatenated) dataset: [Google Drive Link](https://drive.google.com/file/d/1Pc4JyXbzIOrhFIb5tpU9YyseNM-hb9cp/view?usp=sharing).
 
 PS: Our implementation filter some invalid samples (if the target of a sample is too short). Hence the number of the training samples may be smaller than what is reported in the paper. 
